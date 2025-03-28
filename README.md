@@ -15,14 +15,24 @@ This project is built on a microservice architecture using FastAPI. It includes 
 To run all services locally, use the following commands in separate terminal windows:
 
 1. Business Logic Service (runs on port 8000):
+   
+```bash
+uvicorn business_logis:app --port 8000
+```bash
 
-```uvicorn business_logis:app --port 8000```
 
 2. Database Service (runs on port 8001):
-```uvicorn database_service:app --port 8001```
+
+```bash
+uvicorn database_service:app --port 8001
+```bash
 
 3.  Client Service (runs on port 8002):
-```uvicorn client_logic:app --port 8002```
+
+```bash
+uvicorn client_logic:app --port 8002
+```bash
+
 
 
 
