@@ -13,9 +13,10 @@ To run all services locally, use the following commands in separate terminal win
 1. Business Logic Service (runs on port 8000):
 uvicorn business_logis:app --port 8000
 
-2. Database Service (runs on port 8001):
+3. Database Service (runs on port 8001):
 uvicorn database_service:app --port 8001
 
-3. Client Service (runs on port 8002):
+4. Client Service (runs on port 8002):
 uvicorn client_logic:app --port 8002
+
 
