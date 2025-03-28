@@ -36,8 +36,8 @@ uvicorn client_logic:app --port 8002
 # **Client Service - Token-Based Authentication**
 1. Client Service requires authentication for requests to `/process`
 2. Authentication uses a Bearer Token - checked in the Authorization header.
-3. The expected token is stored in the environment variable APP_TOKEN.
-4. If the provided token is incorrect or missing, the request is rejected with 401 Unauthorized.
+3. The expected token is stored in the variable SECRET_TOKEN. 
+4. If the provided token is invalid/missing - request is rejected(401 Unauthorized).
 
 # **Example Request with Token**
 
@@ -56,7 +56,18 @@ curl -X POST "http://localhost:8002/process" \
 4. Client service forwards the result to the DB service for storage.
 5. Client service returns the results to the client.
 
+If the client wants to classify by category(automobile/medicine) some text(As example here is used sentence - "I have problm with my heart")in the seperate terminal he should run the following command:
 
+```bash
+curl -X POST "http://localhost:8002/process" \ 
+     -H "Authorization: Bearer secret-token" \        
+     -H "Content-Type: application/json" \
+     -d '{"data":{"text": "I have problem with my heart"}, "key": 1}'
+```
+The client will see the following in the terminal:
+`{"status":"success","processed_data":{"text":"I have problem with my heart","category":"Medical"}}`
 
+Check in the postman wether it was saved to our db:
 
+<img width="1281" alt="Знімок екрана 2025-03-28 о 18 00 53" src="https://github.com/user-attachments/assets/2f5fea3d-da5d-4fcb-830e-ae084e3c8814" />
 
