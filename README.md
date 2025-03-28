@@ -15,6 +15,7 @@ This project is built on a microservice architecture using FastAPI. It includes 
 To run all services locally, use the following commands in separate terminal windows:
 
 1. Business Logic Service (runs on port 8000):
+
 uvicorn business_logis:app --port 8000
 
 3. Database Service (runs on port 8001):
