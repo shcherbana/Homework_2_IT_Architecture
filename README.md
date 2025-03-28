@@ -30,7 +30,7 @@ uvicorn database_service:app --port 8001
 3.  Client Service (runs on port 8002):
 
 ```bash
-uvicorn client_logic:app --port 8002
+uvicorn client_logis:app --port 8002
 ```
 
 # **Client Service - Token-Based Authentication**
